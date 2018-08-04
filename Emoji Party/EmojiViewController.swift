@@ -9,7 +9,7 @@
 import UIKit
 
 private let reuseIdentifier = "Cell"
-private let labelWidth: Double = 60
+private let labelWidth: Double = 50
 
 class EmojiViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -32,7 +32,7 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         gravity = UIGravityBehavior(items: [])
         animator.addBehavior(gravity)
         dynamics = UIDynamicItemBehavior(items: [])
-        dynamics.elasticity = 1.0
+        dynamics.elasticity = 1.05
         dynamics.resistance = 0
         animator.addBehavior(dynamics)
         
