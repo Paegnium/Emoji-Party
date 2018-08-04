@@ -61,7 +61,11 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         label.textAlignment = .center
         mainView.addSubview(label)
         collisions.addItem(label)
-        gravity.addItem(label)
+//        gravity.addItem(label)
+        let push = UIPushBehavior(items: [label], mode: .instantaneous)
+        push.angle = CGFloat(drand48() * .pi * 2)
+        push.magnitude = CGFloat(1.0 + drand48() * 2)
+        animator.addBehavior(push)
         
     }
 
