@@ -54,6 +54,9 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="6zc-iz-xU8" secondAttribute="trailing" constant="-8" id="Tn8-Il-tku"/>
                                         </constraints>
                                         <size key="customSize" width="90" height="90"/>
+                                        <connections>
+                                            <outlet property="label" destination="6zc-iz-xU8" id="uU2-Dg-UxA"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

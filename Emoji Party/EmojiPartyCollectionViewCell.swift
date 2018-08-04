@@ -10,4 +10,6 @@ import UIKit
 
 class EmojiPartyCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var label: UILabel!
+    
 }
