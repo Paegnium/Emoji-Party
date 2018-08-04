@@ -56,6 +56,10 @@
                                         <size key="customSize" width="90" height="90"/>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="EQ1-FC-h9H"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="GwC-Jb-LKw"/>
+                                </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etU-qg-Jh7">
                                 <rect key="frame" x="0.0" y="110" width="375" height="557"/>
