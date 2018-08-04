@@ -20,6 +20,7 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
     var animator: UIDynamicAnimator!
     var collisions: UICollisionBehavior!
     var gravity: UIGravityBehavior!
+    var dynamics: UIDynamicItemBehavior!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,10 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         animator.addBehavior(collisions)
         gravity = UIGravityBehavior(items: [])
         animator.addBehavior(gravity)
+        dynamics = UIDynamicItemBehavior(items: [])
+        dynamics.elasticity = 1.0
+        dynamics.resistance = 0
+        animator.addBehavior(dynamics)
         
     }
 
@@ -61,6 +66,7 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         label.textAlignment = .center
         mainView.addSubview(label)
         collisions.addItem(label)
+        dynamics.addItem(label)
 //        gravity.addItem(label)
         let push = UIPushBehavior(items: [label], mode: .instantaneous)
         push.angle = CGFloat(drand48() * .pi * 2)
