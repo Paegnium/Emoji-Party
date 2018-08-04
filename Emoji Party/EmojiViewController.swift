@@ -45,6 +45,7 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         let randY = drand48() * Double(mainView.frame.height)
         let label = UILabel(frame: CGRect(x: randX, y: randY, width: labelWidth, height: labelWidth))
         label.text = selectedEmoji
+        label.font = label.font.withSize(60)
         mainView.addSubview(label)
         
     }
