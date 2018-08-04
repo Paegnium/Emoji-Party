@@ -17,9 +17,20 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var mainView: UIView!
     var emojis = ["🦄","🐳","🐠"]
     
+    var animator: UIDynamicAnimator!
+    var collisions: UICollisionBehavior!
+    var gravity: UIGravityBehavior!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        animator = UIDynamicAnimator(referenceView: mainView)
+        collisions = UICollisionBehavior(items: [])
+        collisions.translatesReferenceBoundsIntoBoundary = true
+        animator.addBehavior(collisions)
+        gravity = UIGravityBehavior(items: [])
+        animator.addBehavior(gravity)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +60,8 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         mainView.addSubview(label)
+        collisions.addItem(label)
+        gravity.addItem(label)
         
     }
 
