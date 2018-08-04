@@ -40,7 +40,9 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedEmoji = emojis[indexPath.item]
-        let label = UILabel(frame: CGRect(x: 100, y: 100, width: 60, height: 60))
+        let randX = drand48() * Double(mainView.frame.width)
+        let randY = drand48() * Double(mainView.frame.height)
+        let label = UILabel(frame: CGRect(x: randX, y: randY, width: 60, height: 60))
         label.text = selectedEmoji
         mainView.addSubview(label)
         
