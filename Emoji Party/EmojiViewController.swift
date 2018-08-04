@@ -47,6 +47,7 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         label.text = selectedEmoji
         label.font = label.font.withSize(60)
         label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .center
         mainView.addSubview(label)
         
     }
